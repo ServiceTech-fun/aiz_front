@@ -20,10 +20,10 @@ class AbandoLandController extends Controller
         $this->getAll();
         foreach( $this->abando_lands as $land ) {
             if( $land['_id'] == $land_id ) {
-                return $land;
+                return ['ok' => true, 'content' => $land];
             }
         }
-        return ['ok' => false];
+        return ['ok' => false, 'error_message' => 'land id is not found'];
     }
 
     public function viewByLandId( string $land_id )
@@ -32,6 +32,6 @@ class AbandoLandController extends Controller
         if( $land['ok'] == false ) {
             return view('404');
         }
-        return view('detail', ['abando_land' => $land]);
+        return view('detail', ['abando_land' => $land['content']]);
     }
 }
