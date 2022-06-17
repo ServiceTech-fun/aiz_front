@@ -12,11 +12,11 @@ class AccountController extends Controller
         $this->accounts = json_decode(file_get_contents($api_server), true);
     }
 
-    public function get( string $account_id ): array
+    public function get( string $email ): array
     {
         $this->getAll();
         foreach( $this->accounts as $account ) {
-            if( $account['_id'] == $account_id ) {
+            if( $account['email'] == $email ) {
                 return ['ok' => true, 'content' => $account];
             }
         }
@@ -25,10 +25,14 @@ class AccountController extends Controller
 
     public function auth( Request $request )
     {
-        $result = $this->get( $request->input('user_id') );
+        if(empty($request->input('email')) || empty($request->input('password'))){
+            return view('login');
+        }
+
+        $result = $this->get( $request->input('email') );
         if ($result['ok'] == false) {
             return view('login', ['status' => 404]);
         }
-        return view('mypage', ['account' => $result['content']]);
+        return view('account.mypage', ['account' => $result['content']]);
     }
 }

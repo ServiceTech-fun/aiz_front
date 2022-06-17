@@ -23,10 +23,7 @@ Route::get('/', function () {
 /**
  * ログイン画面
  */
-Route::get('/login', function () {
-    return view('login');
-});
-Route::post('/login/auth', [AccountController::class, 'auth']);
+Route::get('/login', [AccountController::class, 'auth']);
 
 Route::get('mypage', function () {
     return view('account.mypage');
