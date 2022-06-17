@@ -7,10 +7,9 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <title>LAND's</title>
 </head>
-<header>
-    @include('section.header')
-</header>
 <body class="min-h-screen bg-gray-100">
+    {{-- ヘッダーナビゲーション --}}
+    @include('section.header')
     <p>トップページ</p>
     <ul>
         <li>
@@ -23,8 +22,8 @@
         <li>検索→駅名から</li>
         <li>など</li>
     </ul>
-</body>
-<footer>
+    
+    {{-- フッターナビゲーション --}}
     @include('section.footer')
-</footer>
+</body>
 </html>
