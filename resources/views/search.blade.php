@@ -21,6 +21,7 @@ $abandonment_lands = json_decode(file_get_contents($api_server), true);
 </head>
 
 <body class="">
+    {{-- ヘッダーナビゲーション --}}
     @include('section.header')
     <div class="max-w-screen-2xl px-4 md:px-8 mx-auto pt-20">
         <div class="mb-10 md:mb-16">

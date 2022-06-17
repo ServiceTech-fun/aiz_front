@@ -10,20 +10,24 @@
 <body class="min-h-screen bg-gray-100">
     {{-- ヘッダーナビゲーション --}}
     @include('section.header')
-    <p>トップページ</p>
-    <ul>
-        <li>
-            <a href="/login">ログイン</a>
-        </li>
-        <li>アカウント新規作成</li>
-    </ul>
-    <ul>
-        <li>検索→地名から</li>
-        <li>検索→駅名から</li>
-        <li>など</li>
-    </ul>
-    
+    <div class="max-w-screen-2xl px-4 md:px-8 mx-auto pt-20">
+        <p>トップページ</p>
+        <ul>
+            <li>
+                <a href="/login">ログイン</a>
+            </li>
+            <li>アカウント新規作成</li>
+        </ul>
+        <ul>
+            <li>検索→地名から</li>
+            <li>検索→駅名から</li>
+            <li>など</li>
+        </ul>
+    </div>
+
+
     {{-- フッターナビゲーション --}}
     @include('section.footer')
+    
 </body>
 </html>

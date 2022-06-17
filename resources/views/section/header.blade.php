@@ -1,69 +1,137 @@
-<nav class="px-2 bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-  <div class="container flex flex-wrap items-center justify-between mx-auto">
-    <a href="/" class="flex items-center">
-      <img src="{{asset('img/logo.svg')}}" class="h-6 mr-3 sm:h-10" alt="logo">
-      <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">LAND's</span>
-    </a>
-    <button data-collapse-toggle="mobile-menu" type="button"
-      class="inline-flex items-center justify-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-500"
-      aria-controls="mobile-menu-2" aria-expanded="false">
-      <span class="sr-only">Open main menu</span>
-      <img src="{{asset('/img/logo.svg')}} class="h-6 mr-3 sm:h-10" alt="logo">
-    </button>
-    <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
-      <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-        <li>
-          <a href=""
-            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent"
-            aria-current="page">ホーム</a>
-        </li>
-        <li>
-          <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
-            class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Dropdown
-            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clip-rule="evenodd"></path>
-            </svg></button>
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div class="relative bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+      <div class="flex justify-start lg:w-0 lg:flex-1">
+        <a href="/">
+          <span class="sr-only">Workflow</span>
+          <img class="h-8 w-auto sm:h-10" src="{{ asset('img/logo.svg')}}" alt="">
+        </a>
+      </div>
 
-          <div id="dropdownNavbar"
-            class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
-            style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(741px, 2262.5px, 0px);"
-            data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="top">
-            <ul class="py-1 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-              <li>
-                <a href="#"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-              </li>
-              <li>
-                <a href="#"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-              </li>
-              <li>
-                <a href="#"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-              </li>
-            </ul>
-            <div class="py-1">
-              <a href="#"
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign
-                out</a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <a href=""
-            class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">新規登録</a>
-        </li>
-        <li>
-          <a href="/login"
-            class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">ログイン</a>
-        </li>
-        <li>
-          <a href="#"
-            class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Contact</a>
-        </li>
-      </ul>
+      {{-- ハンバーガーメニュー --}}
+      <div class="-mr-2 -my-2 md:hidden">
+        <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" id="hamburger" aria-expanded="false">
+          <span class="sr-only">Open menu</span>
+          <!-- Heroicon name: outline/menu -->
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="hidden md:flex space-x-10">
+        <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900"> ホーム </a>
+        <a href="/search" class="text-base font-medium text-gray-500 hover:text-gray-900"> 検索 </a>
+        <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">  </a>
+      </nav>
+      <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+        <a href="/login" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"> ログイン </a>
+        <a href="#" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"> 新規登録 </a>
+      </div>
     </div>
   </div>
-</nav>
+
+  <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden hidden" id="spmenu-wrapper">
+    <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+      <div class="pt-5 pb-6 px-5">
+        <div class="flex items-center justify-between">
+          <div>
+            <img class="h-8 w-auto" src="{{asset('img/logo.svg')}}" alt="Workflow">
+          </div>
+          <div class="-mr-2" id="close">
+            <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" id="close-menu">
+              <span class="sr-only">Close menu</span>
+
+              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {{-- sp用のメニュー --}}
+        <div class="mt-6">
+          <nav class="grid gap-y-8">
+            <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+              <!-- Heroicon name: outline/chart-bar -->
+              <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+              <span class="ml-3 text-base font-medium text-gray-900"> ホーム</span>
+            </a>
+
+            <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+              <!-- Heroicon name: outline/cursor-click -->
+              <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+              </svg>
+              <span class="ml-3 text-base font-medium text-gray-900"> Engagement </span>
+            </a>
+
+            <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+              <!-- Heroicon name: outline/shield-check -->
+              <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <span class="ml-3 text-base font-medium text-gray-900"> Security </span>
+            </a>
+
+            <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+              <!-- Heroicon name: outline/view-grid -->
+              <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+              </svg>
+              <span class="ml-3 text-base font-medium text-gray-900"> Integrations </span>
+            </a>
+
+            <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+              <!-- Heroicon name: outline/refresh -->
+              <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+              <span class="ml-3 text-base font-medium text-gray-900"> Automations </span>
+            </a>
+          </nav>
+        </div>
+      </div>
+      <div class="py-6 px-5 space-y-6">
+        <div class="grid grid-cols-2 gap-y-4 gap-x-8">
+          <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> Pricing </a>
+
+          <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> Docs </a>
+
+          <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> Help Center </a>
+
+          <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> Guides </a>
+
+          <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> Events </a>
+
+          <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> Security </a>
+        </div>
+        <div>
+          <a href="#" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">新規作成</a>
+          <p class="mt-6 text-center text-base font-medium text-gray-500">
+            Existing customer?
+            <a href="#" class="text-indigo-600 hover:text-indigo-500">ログイン</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+window.onload = function(){
+  const wrapper = document.querySelector('#spmenu-wrapper');
+  const hamburger = document.querySelector('#hamburger');
+  const close = document.querySelector('#close-menu');
+  hamburger.addEventListener('click', function(){
+    hamburger.classList.toggle('hidden'); 
+    wrapper.classList.toggle('hidden');
+  });
+  close.addEventListener('click', function(){
+    wrapper.classList.toggle('hidden');
+    hamburger.classList.toggle('hidden');
+  });
+}
+</script>
