@@ -29,6 +29,9 @@ class AbandoLandController extends Controller
     public function viewByLandId( string $land_id )
     {
         $land = $this->get($land_id);
+        if( $land['ok'] == false ) {
+            return view('404');
+        }
         return view('detail', ['abando_land' => $land]);
     }
 }
