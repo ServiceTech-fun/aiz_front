@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AbandoLandController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,9 +26,7 @@ Route::get('/search', function () {
     return view('search');
 });
 
-Route::get('/detail', function () {
-    return view('detail');
-});
+Route::get('/land/{land_id}', [AbandoLandController::class, 'viewByLandId']);
 
 Route::get('/charge', function () {
     return view('charge');
@@ -35,4 +34,8 @@ Route::get('/charge', function () {
 
 Route::get('/contract', function () {
     return view('contract');
+});
+
+Route::get('/owner/{user_id}', function ($id) {
+    return view('owner.index');
 });
