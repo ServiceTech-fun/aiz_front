@@ -45,14 +45,13 @@ $abandonment_lands = json_decode(file_get_contents($api_server), true);
                     ?>
                     m<sup>2</sup>
                     </p>
-                    <p>利用状況：
-                        <?php
-                    if($land['state'] == "Available"){
-                        echo '利用可能';
-                    }elseif($land['state'] == "Wanted"){
-                        echo '利用予定';
-                    }elseif($land['state'] == "Ended"){
-                        echo '募集終了';
+                    <p>用途：
+
+                    <?php
+                    if($land['usage'] == "Agriculture"){
+                       echo '農業';
+                    }elseif($land['usage'] == "Home"){
+                      echo '住居';
                     }
                     ?>
                     </p>
@@ -66,15 +65,17 @@ $abandonment_lands = json_decode(file_get_contents($api_server), true);
                                 <span class="block text-indigo-500"><?= $land['name'] ?></span>
                             </div>
                         </div>
-                        <span class="text-gray-500 text-sm border rounded px-2 py-1">
+                        
                         <?php
-                        if($land['usage'] == "Agriculture"){
-                           echo '農業';
-                        }elseif($land['usage'] == "Home"){
-                          echo '住居';
+                        if($land['state'] == "Available"){
+                           echo '<span class="font-bold text-gray-800 text-sm border border-gray-800 rounded px-2 py-1">利用可能</span>';
+                        }elseif($land['state'] == "Wanted"){
+                           echo '<span class="text-yellow-600 text-sm border border-yellow-600 rounded px-2 py-1">利用予定</span>';
+                        }elseif($land['state'] == "Ended"){
+                           echo '<span class="text-gray-500 text-sm border rounded px-2 py-1">募集終了</span>';
                         }
                         ?>
-                        </span>
+
                     </div> 
                 </div>   
             </div>       
