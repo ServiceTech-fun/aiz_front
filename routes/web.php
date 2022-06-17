@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AbandoLandController;
+use App\Http\Controllers\AccountController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +20,13 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/login', function () {
-    return view('login');
+/**
+ * ログイン画面
+ */
+Route::get('/login', [AccountController::class, 'auth']);
+
+Route::get('mypage', function () {
+    return view('account.mypage');
 });
 
 Route::get('/search', function () {
