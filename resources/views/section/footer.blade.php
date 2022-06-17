@@ -40,6 +40,6 @@
       <!-- social - end -->
     </div>
 
-    <div class="text-gray-400 text-sm text-center py-8">© 2021 - Present Flowrift. All rights reserved.</div>
+    <div class="text-gray-400 text-sm text-center py-8">© 2022 Service-tech. All rights reserved.</div>
   </footer>
 </div>
