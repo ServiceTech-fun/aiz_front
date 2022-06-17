@@ -61,4 +61,7 @@
     </div>
 </div>
 </body>
+<footer>
+    @include('section.footer')
+</footer>
 </html>
