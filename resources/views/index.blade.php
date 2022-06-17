@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html class="text-gray-900 antialiased leading-tight">
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -10,10 +10,12 @@
 <header>
     @include('section.header')
 </header>
-<body>
+<body class="min-h-screen bg-gray-100">
     <p>トップページ</p>
     <ul>
-        <li>ログイン</li>
+        <li>
+            <a href="/login">ログイン</a>
+        </li>
         <li>アカウント新規作成</li>
     </ul>
     <ul>
@@ -22,4 +24,7 @@
         <li>など</li>
     </ul>
 </body>
+<footer>
+    @include('section.footer')
+</footer>
 </html>
