@@ -1,6 +1,10 @@
 <?php
-$api_server = 'http://34.168.149.138:5000/';
-$search_method = $_GET['method'];
+$api_server = 'http://34.168.149.138:5000/land?key=all';
+if( isset($_GET['method']) ) {
+    $search_method = $_GET['method'];
+} else {
+    $search_method = 'all';
+}
 /**
  * $search_method
  * city: 都道府県
