@@ -23,11 +23,15 @@
             <li>検索→駅名から</li>
             <li>など</li>
         </ul>
+
+
     </div>
+    {{-- メンバー紹介セクション --}}
+    @include('section.member')
+
 
 
     {{-- フッターナビゲーション --}}
     @include('section.footer')
-    
 </body>
 </html>
