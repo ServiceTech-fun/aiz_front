@@ -11,7 +11,7 @@ use App\Http\Controllers\Controller;
 class AbandoLandController extends Controller
 {
     private $abando_lands;
-    private $api_server = 'http://34.168.149.138:5000/';
+    private $api_server = 'http://34.168.149.138:5000/land?key=all';
 
     /**
      * 土地情報を全て取得する
