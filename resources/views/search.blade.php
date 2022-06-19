@@ -30,14 +30,14 @@ $abandonment_lands = json_decode(file_get_contents($api_server), true);
     <div class="max-w-screen-2xl px-4 md:px-8 mx-auto pt-20">
         <div class="mb-10 md:mb-16">
             <h1 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">検索結果ページ</h1>
-            <p class="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">GETメソッドを使って、検索方法や検索ワードを取得し、検索APIを走らせて表示させる</p>
+            <p class="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">あなたのお気に入りの土地を見つけてください</p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 xl:gap-8">
             <?php
             foreach ($abandonment_lands as $land) {
             ?>
             <div class="flex flex-col bg-white border rounded-lg overflow-hidden">
-                <a href="#" class="group h-48 md:h-64 block bg-gray-100 overflow-hidden relative">
+                <a href='/land/<?= $land['_id'] ?>' class="group h-48 md:h-64 block bg-gray-100 overflow-hidden relative">
                     <img
                     class="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"
                     src="<?= $land['image'] ?>" alt="土地画像">
