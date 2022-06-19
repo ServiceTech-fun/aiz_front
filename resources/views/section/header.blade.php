@@ -4,7 +4,7 @@
       <div class="flex justify-start lg:w-0 lg:flex-1">
         <a href="/">
           <span class="sr-only">Workflow</span>
-          <img class="h-8 w-auto sm:h-10" src="{{ asset('img/logo.svg')}}" alt="">
+          <img class="h-8 w-auto sm:h-10" src="img/logo.svg" alt="">
         </a>
       </div>
 
@@ -36,7 +36,7 @@
       <div class="pt-5 pb-6 px-5">
         <div class="flex items-center justify-between">
           <div>
-            <img class="h-8 w-auto" src="{{asset('img/logo.svg')}}" alt="Workflow">
+            <img class="h-8 w-auto" src="img/logo.svg" alt="Workflow">
           </div>
           <div class="-mr-2" id="close">
             <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" id="close-menu">
